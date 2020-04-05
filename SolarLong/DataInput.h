@@ -8,21 +8,21 @@ using namespace std;
 
 
 
-void ucitavacPodatakaKometa(vector <CAMS_comet> dateTimeSolLong) {
-
-	ifstream dataInput("Podatci.txt");
-	vector <string> tempVector;  //stores first 83 values from the file stream then clears itself
+void ucitavacPodatakaKometa(string fStreamName, int posDaily, int posDate, int posTime, int posSolarLongitude, int maxPositions) {
+	vector <CAMS_comet> dateTimeSolLong;
+	ifstream dataInput(fStreamName);
+	vector <string> tempVector;  
 	string tempData, tempDaily, tempDate, tempTime, tempSolarLongitude;
 	int counter = 0;
 
 	while (dataInput.good()) {
 		getline(dataInput, tempData, ';');
-		if (counter == 81) {
+		if (counter == maxPositions) {
 
-			tempDaily = tempVector[1];
-			tempDate = tempVector[2];
-			tempTime = tempVector[3];
-			tempSolarLongitude = tempVector[57];
+			tempDaily = tempVector[posDaily];
+			tempDate = tempVector[posDate];
+			tempTime = tempVector[posTime];
+			tempSolarLongitude = tempVector[posSolarLongitude];
 
 			dateTimeSolLong.push_back(CAMS_comet(tempDaily, tempDate, tempTime, tempSolarLongitude));
 

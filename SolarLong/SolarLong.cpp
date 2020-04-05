@@ -4,7 +4,7 @@
 int main()
 {
 
-    ucitavacPodatakaKometa(dateTimeSolLong);
+    ucitavacPodatakaKometa("Podatci.txt", 1, 2, 3, 57, 81);
 
 
 

@@ -15,4 +15,3 @@ public:
 
 };
 
-vector <CAMS_comet> dateTimeSolLong;
