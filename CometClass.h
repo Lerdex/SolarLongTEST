@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <iostream>
+using namespace std;
 
 class CAMS_comet {
 private:
@@ -11,7 +13,10 @@ public:
 		Daily = stod(aDaily);
 		DateTime = aDate + " @ " + aTime;
 		SolarLongitude = stod(aSolarLongitude);
-
+		cout << Daily << endl;
+		cout << DateTime << endl; 
+		cout << SolarLongitude << endl; 
+		cout << endl;
 	}
 
 };
