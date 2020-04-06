@@ -8,11 +8,11 @@ using namespace std;
 
 
 
-void ucitavacPodatakaKometa(string fStreamName, int posDaily, int posDate, int posTime, int posSolarLongitude, int maxPositions) {
+void ucitavacPodatakaKometa(std::string fStreamName, int posDaily, int posDate, int posTime, int posSolarLongitude, int maxPositions) {
 	vector <CAMS_comet> dateTimeSolLong;
 	ifstream dataInput(fStreamName);
-	vector <string> tempVector;  
-	string tempData, tempDaily, tempDate, tempTime, tempSolarLongitude;
+	vector <std::string> tempVector;  
+	std::string tempData, tempDaily, tempDate, tempTime, tempSolarLongitude;
 	int counter = 0;
 
 	while (dataInput.good()) {

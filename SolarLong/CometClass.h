@@ -1,12 +1,13 @@
 #pragma once
+#include <string>
 
 class CAMS_comet {
 private:
 	double Daily;
-	string DateTime;
+	std::string DateTime;
 	double SolarLongitude;
 public:
-	CAMS_comet(string aDaily, string aDate, string aTime, string aSolarLongitude) {
+	CAMS_comet(std::string aDaily, std::string aDate, std::string aTime, std::string aSolarLongitude) {
 		Daily = stod(aDaily);
 		DateTime = aDate + " @ " + aTime;
 		SolarLongitude = stod(aSolarLongitude);
