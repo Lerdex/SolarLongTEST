@@ -44,3 +44,5 @@ public:
 		minutes = stoi(tempVec[1]);
 		seconds = stoi(tempVec[2]);
 		tempVec.clear();
+	}
+};
