@@ -9,7 +9,7 @@ using namespace std;
 
 
 void ucitavacPodatakaKometa(std::string fStreamName, int posDaily, int posDate, int posTime, int posSolarLongitude, int maxPositions) {
-	vector <CAMS_comet> dateTimeSolLong;
+	vector <cometData> dateTimeSolLong;
 	ifstream dataInput(fStreamName);
 	vector <std::string> tempVector;  
 	std::string tempData, tempDaily, tempDate, tempTime, tempSolarLongitude;
@@ -24,7 +24,7 @@ void ucitavacPodatakaKometa(std::string fStreamName, int posDaily, int posDate, 
 			tempTime = tempVector[posTime];
 			tempSolarLongitude = tempVector[posSolarLongitude];
 
-			dateTimeSolLong.push_back(CAMS_comet(tempDaily, tempDate, tempTime, tempSolarLongitude));
+			dateTimeSolLong.push_back(cometData(tempDaily, tempDate, tempTime, tempSolarLongitude));
 
 			tempVector.clear();
 			counter = 0;

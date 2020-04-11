@@ -1,16 +1,49 @@
 #pragma once
 #include <string>
+#include <ctime>
+#include <sstream>
+#include <iostream>
+#include <vector>
+using namespace std;
 
-class CAMS_comet {
+class cometData {
 private:
 	double Daily;
-	std::string DateTime;
 	double SolarLongitude;
+	int hours;
+	int minutes;
+	int seconds;
+	int day;
+	int month;
+	int year;
 public:
-	CAMS_comet(std::string aDaily, std::string aDate, std::string aTime, std::string aSolarLongitude) {
+	cometData(std::string aDaily, std::string aDate, std::string aTime, std::string aSolarLongitude) {
 		Daily = stod(aDaily);
-		DateTime = aDate + " @ " + aTime;
 		SolarLongitude = stod(aSolarLongitude);
+
+		std::stringstream ssDate(aDate);
+		std::stringstream ssTime(aTime);
+		vector <std::string> tempVec;
+		string temporaryStr;
+
+		while (ssDate.good())
+		{			
+			getline(ssDate, temporaryStr, '.');
+			tempVec.push_back(temporaryStr);
+		}
+		month = stoi(tempVec[0]);
+		day = stoi(tempVec[1]);
+		year = 2000 + stoi(tempVec[2]);
+		tempVec.clear();
+		while (ssTime.good())
+		{
+			getline(ssTime, temporaryStr, ':');
+			tempVec.push_back(temporaryStr);
+		}
+		hours = stoi(tempVec[0]);
+		minutes = stoi(tempVec[1]);
+		seconds = stoi(tempVec[2]);
+		tempVec.clear();
 
 	}
 
