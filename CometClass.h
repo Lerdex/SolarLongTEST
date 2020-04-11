@@ -1,9 +1,13 @@
 #pragma once
 #include <string>
+<<<<<<< HEAD
 #include <ctime>
 #include <sstream>
 #include <iostream>
 #include <vector>
+=======
+#include <iostream>
+>>>>>>> 5c6fa846a68366887f4500a06043aff4f3c35b5a
 using namespace std;
 
 class cometData {
@@ -20,6 +24,7 @@ public:
 	cometData(std::string aDaily, std::string aDate, std::string aTime, std::string aSolarLongitude) {
 		Daily = stod(aDaily);
 		SolarLongitude = stod(aSolarLongitude);
+
 
 		std::stringstream ssDate(aDate);
 		std::stringstream ssTime(aTime);
@@ -44,6 +49,12 @@ public:
 		minutes = stoi(tempVec[1]);
 		seconds = stoi(tempVec[2]);
 		tempVec.clear();
+
+
+		cout << Daily << endl;
+		cout << DateTime << endl; 
+		cout << SolarLongitude << endl; 
+		cout << endl;
 
 	}
 
