@@ -10,6 +10,7 @@ class cometData {
 private:
 	double Daily;
 	double SolarLongitude;
+	double mjd;
 	int hours;
 	int minutes;
 	int seconds;
@@ -17,32 +18,16 @@ private:
 	int month;
 	int year;
 public:
-	cometData(std::string aDaily, std::string aDate, std::string aTime, std::string aSolarLongitude) {
+	cometData(std::string aDaily, std::string aSolarLongitude, int aDay, int aMonth, int aYear, int aSeconds, int aMinutes, int aHours, string aMjd) {
 		Daily = stod(aDaily);
 		SolarLongitude = stod(aSolarLongitude);
-
-		std::stringstream ssDate(aDate);
-		std::stringstream ssTime(aTime);
-		vector <std::string> tempVec;
-		string temporaryStr;
-
-		while (ssDate.good())
-		{
-			getline(ssDate, temporaryStr, '.');
-			tempVec.push_back(temporaryStr);
-		}
-		month = stoi(tempVec[0]);
-		day = stoi(tempVec[1]);
-		year = 2000 + stoi(tempVec[2]);
-		tempVec.clear();
-		while (ssTime.good())
-		{
-			getline(ssTime, temporaryStr, ':');
-			tempVec.push_back(temporaryStr);
-		}
-		hours = stoi(tempVec[0]);
-		minutes = stoi(tempVec[1]);
-		seconds = stoi(tempVec[2]);
-		tempVec.clear();
+		mjd = stod(aMjd);
+		day = aDay;
+		month = aMonth;
+		year = aYear;
+		seconds = aSeconds;
+		minutes = aMinutes;
+		hours = aHours;
+		
 	}
 };

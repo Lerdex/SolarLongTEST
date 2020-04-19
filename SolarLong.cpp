@@ -1,11 +1,11 @@
-#include "DataInput.h"
-
+//#include "DataInput.h"
+#include "DataInputEDMONDiSONATACO.h"
 
 int main()
 {
 
-    ucitavacPodatakaKometa("Podatci.txt", 1, 2, 3, 57, 81);
-
+    //ucitavacPodatakaKometaCAMS("TestniPodatciCAMS.txt", 1, 2, 3, 57, 81, ';');
+	ucitavacPodatakaKometaEDMONDiSONATACO("TestniPodatciEDMOND.txt", 1, 2, 3, 4, 86, ',');
 
 
 }
