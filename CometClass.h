@@ -1,13 +1,13 @@
 #pragma once
 #include <string>
-#include <ctime>
 #include <sstream>
 #include <iostream>
 #include <vector>
+#include <fstream>
 using namespace std;
 
 class cometData {
-private:
+public:
 	double Daily;
 	double SolarLongitude;
 	double mjd;
@@ -17,7 +17,7 @@ private:
 	int day;
 	int month;
 	int year;
-public:
+
 	cometData(std::string aDaily, std::string aSolarLongitude, int aDay, int aMonth, int aYear, int aSeconds, int aMinutes, int aHours, string aMjd) {
 		Daily = stod(aDaily);
 		SolarLongitude = stod(aSolarLongitude);
