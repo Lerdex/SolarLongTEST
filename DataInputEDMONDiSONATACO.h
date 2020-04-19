@@ -24,11 +24,11 @@ void ucitavacPodatakaKometaEDMONDiSONATACO(std::string fStreamName, int posDaily
 
 			tempDateTime = tempVector[posDateTime];
 			tempYear = stoi(tempDateTime.substr(1, 4));
-			tempMonth = stoi(tempDateTime.substr(5, 6));
-			tempDay = stoi(tempDateTime.substr(7, 8));
-			tempHours = stoi(tempDateTime.substr(10, 11));
-			tempMinutes = stoi(tempDateTime.substr(12, 13));
-			tempSeconds = stoi(tempDateTime.substr(14, 15));
+			tempMonth = stoi(tempDateTime.substr(4, 2));
+			tempDay = stoi(tempDateTime.substr(6, 2));
+			tempHours = stoi(tempDateTime.substr(9, 2));
+			tempMinutes = stoi(tempDateTime.substr(11, 2));
+			tempSeconds = stoi(tempDateTime.substr(13, 2));
 
 			tempMjd = tempVector[posMjd];
 			tempDaily = tempVector[posDaily];
