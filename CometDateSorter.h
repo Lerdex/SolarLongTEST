@@ -16,6 +16,8 @@ public:
 		month = aMonth;
 		year = aYear;
 		numberOfComets = 1;
+
+		printf("%d %d %d        %d\n\n", day, month, year, numberOfComets);
 	}
 };
 
@@ -24,7 +26,7 @@ vector <numberOfCometsInADay> fNumberOfCometsInADay() {
 	vector <cometData> vecCometData;
 	int counter = 0;
 	//***treba promijeniti da radi sa svim bazama podataka***
-	vecCometData = ucitavacPodatakaKometa("PraviPodatci.txt", 1, 0, 0, 57, 81, ';', false, true, 0, 0, 0, 0, 0, 0);		
+	vecCometData = cometDataPickerCAMS("PraviPodatciManjeMemorije.txt", ';', 81);
 
 	vecNumberOfCometsInADay.push_back(numberOfCometsInADay(0, 0, 0));	//samo kako bi se popunilo prvo mjesto jer inace javlja errore
 

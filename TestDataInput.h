@@ -1,15 +1,15 @@
 #pragma once
-#include "DataInput.h"
-#include "iostream"
+#include "CometDataPicker.h"
 #include <cassert>
 #include <stdio.h>
 
 void testDataInput() {
 	vector <cometData> testVector;
-	testVector = ucitavacPodatakaKometa("TestniPodatciCAMS.txt", 1, 0, 0, 57, 81, ';', false, true, 0, 0, 0, 0, 0, 0);
-	cout << "CAMS DIO UCITAVACA: \n \n";
 
-	assert(testVector[0].day == 21, "Day ne radi normalno"); //CAMS testni dio	
+			//CAMS testni dio
+
+	testVector = cometDataPickerCAMS("TestniPodatciCAMS.txt", ';', 81);
+	assert(testVector[0].day == 21, "Day ne radi normalno"); 	
 	assert(testVector[0].month == 10, "Month ne radi normalno");
 	assert(testVector[0].year == 2010, "Year ne radi normalno");
 	assert(testVector[0].hours == 3, "Hours ne radi normalno" );
@@ -19,9 +19,9 @@ void testDataInput() {
 	assert(testVector[0].SolarLongitude == 207.4906, "Solar Longitude ne radi normalno");
 
 
-	cout << "\n \n EDMOND DIO UCITAVACA: \n \n";				//EDMOND testni dio
+			//EDMOND testni dio
 
-	testVector = ucitavacPodatakaKometa("TestniPodatciEDMOND.txt", 1, 2, 3, 4, 86, ',', true, false, 7, 5, 1, 10, 12, 14);
+	testVector = cometDataPickerEDMONDiSONOTACO("TestniPodatciEDMOND.txt", ',', 86);
 	assert(testVector[0].day == 12, "Day ne radi normalno"); 
 	assert(testVector[0].month == 8, "Month ne radi normalno");
 	assert(testVector[0].year == 2001, "Year ne radi normalno");
@@ -33,9 +33,9 @@ void testDataInput() {
 	assert(testVector[0].mjd == 52133.884412, "Mjd Longitude ne radi normalno");
 	
 	
-	cout << "\n \n SONOTACO DIO UCITAVACA: \n \n";				//SONOTACO testni dio
+			//SONOTACO testni dio
 
-	testVector = ucitavacPodatakaKometa("TestniPodatciSONOTACO.txt", 1, 2, 3, 4, 105, ',', true, false, 7, 5, 1, 10, 12, 14);
+	testVector = cometDataPickerEDMONDiSONOTACO("TestniPodatciSONOTACO.txt", ',', 105);
 	assert(testVector[0].day == 3, "Day ne radi normalno");
 	assert(testVector[0].month == 1, "Month ne radi normalno");
 	assert(testVector[0].year == 2007, "Year ne radi normalno");
@@ -47,9 +47,9 @@ void testDataInput() {
 	assert(testVector[0].mjd == 54103.607014, "Mjd Longitude ne radi normalno");
 	assert(testVector[0].day == 3);
 
-	cout << "\n \n GMN DIO UCITAVACA: \n \n";				//GMN testni dio
+			//GMN testni dio
 
-	testVector = ucitavacPodatakaKometa("TestniPodatciGMN.txt", 2, 1, 0, 4, 81, ';', false, false, 9, 6, 1, 12, 15, 18);
+	testVector = cometDataPickerGMN("TestniPodatciGMN.txt", ';', 81);
 	assert(testVector[0].day == 10, "Day ne radi normalno"); 
 	assert(testVector[0].month == 12, "Month ne radi normalno");
 	assert(testVector[0].year == 2018, "Year ne radi normalno");

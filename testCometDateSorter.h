@@ -1,12 +1,14 @@
 #pragma once
-#include "CometDataSorter.h"
+#include "CometDateSorter.h"
 #include <cassert>
 #include <vector>
 
 
-void testCometDateSorter(){
+void testCometDateSorter() {
+
     vector <numberOfCometsInADay> testVector;
     testVector = fNumberOfCometsInADay();
+
     assert(testVector[0].day == 21, "Day ne radi normalno");
     assert(testVector[0].month == 10, "Month ne radi normalno");
     assert(testVector[0].year == 2010, "Year ne radi normalno");
