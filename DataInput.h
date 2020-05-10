@@ -8,14 +8,22 @@ vector<vector<string>> ucitavacPodatakaKometa(string fStreamName, char delimiter
 	string tempData;
 	int columnsCount = 0;
 
-	while (dataInput.good()) {
-		
+	while (dataInput.good()) {		
 			getline(dataInput, tempData, delimiter);
 			tempVector.push_back(tempData);
+
+			
+			for (int i = 0; i < tempData.size(); i++) {
+				if (tempData[i] == '\n' && columnsCount < expectedColumnsCount) {
+					tempVector.clear();
+					columnsCount = 0;
+				}
+			}
+			
 			columnsCount++;
 
-		if (columnsCount <= expectedColumnsCount) continue;
-		
+		if (columnsCount < expectedColumnsCount + 1) continue;
+
 		vectorOfVectors.push_back(tempVector);
 		tempVector.clear();
 		columnsCount = 0;

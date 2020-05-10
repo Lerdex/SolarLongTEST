@@ -4,11 +4,11 @@
 #include "testCometDateSorter.h"
 
 int main()
-{
-	
-	
-
-
+{	
+	/*cometDataPickerCAMS("LokalniTestniPodatak.txt", ';', 81);
+	cout << "Tvoja majka";
+	cout << "Tvoja majka";*/
+	testDataInput();
 }
 
 

@@ -3,12 +3,13 @@
 
 vector <cometData> cometDataPickerCAMS(string fStreamName, char delimiter, int expectedColumnsCount) {
 	vector <cometData> dateTimeSolLong;
+	vector <string> tempVec;
 	vector <vector<string>> vectorOfVectors = ucitavacPodatakaKometa(fStreamName, delimiter, expectedColumnsCount);
 	string tempDaily, tempSolarLongitude, tempStr;
 	int tempDay, tempMonth, tempYear, tempSeconds, tempMinutes, tempHours;
 
 	for (int i = 0; i < vectorOfVectors.size(); i++) {
-		vector <string> tempVec;
+		
 		stringstream ssDate(vectorOfVectors[i][2]);
 		stringstream ssTime(vectorOfVectors[i][3]);
 
@@ -73,7 +74,7 @@ vector <cometData> cometDataPickerGMN(string fStreamName, char delimiter, int ex
 	for (int i = 0; i < vectorOfVectors.size(); i++) {
 
 		tempDateTime = vectorOfVectors[i][1];
-		tempYear = stoi(tempDateTime.substr(2, 4));
+		tempYear = stoi(tempDateTime.substr(1, 4));
 		tempMonth = stoi(tempDateTime.substr(6, 2));
 		tempDay = stoi(tempDateTime.substr(9, 2));
 		tempHours = stoi(tempDateTime.substr(12, 2));
