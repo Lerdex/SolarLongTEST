@@ -7,6 +7,8 @@ void testDataInput() {
 	vector <cometData> testVector;
 
 			//CAMS testni dio
+	testVector = cometDataPickerCAMS("TestniPodatciCAMSWithoutLine.txt", ';', 81);
+	assert(testVector.size() == 2, "Remover nepotpunih linija ne radi");  
 
 	testVector = cometDataPickerCAMS("TestniPodatciCAMS.txt", ';', 81);
 	assert(testVector[0].day == 21, "Day ne radi normalno"); 	
