@@ -7,7 +7,7 @@
 void testCometDateSorter() {
 
     vector <numberOfCometsInADay> testVector;
-    testVector = fNumberOfCometsInADay();
+    testVector = fNumberOfCometsInADay("TestniPodatciCometDateSorter.txt", ';', 81, cometDataPickerCAMS);
     
     assert(testVector[0].day == 21, "Day ne radi normalno");
     assert(testVector[0].month == 10, "Month ne radi normalno");

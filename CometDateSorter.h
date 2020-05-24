@@ -19,13 +19,11 @@ public:
 	}
 };
 
-vector <numberOfCometsInADay> fNumberOfCometsInADay() {
+vector <numberOfCometsInADay> fNumberOfCometsInADay(string fStreamName, char delimiter, int expectedColumnsCount, vector <cometData> (*cometDataPickerName)(string, char, int)) {
 	vector <numberOfCometsInADay> vecNumberOfCometsInADay;
 	vector <cometData> vecCometData;
 	int counter = 0;
-	//***treba promijeniti da radi sa svim bazama podataka***
-	vecCometData = cometDataPickerCAMS("TestniPodatciCometDateSorter.txt", ';', 81);
-
+	vecCometData = cometDataPickerName(fStreamName, delimiter, expectedColumnsCount);
 	vecNumberOfCometsInADay.push_back(numberOfCometsInADay(0, 0, 0));	//samo kako bi se popunilo prvo mjesto jer inace javlja errore
 
 	for (int i = 0; i < vecCometData.size(); i++) {
