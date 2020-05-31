@@ -5,6 +5,7 @@
 #include <vector>
 #include <fstream>
 #include <cstring>
+#include <algorithm>
 using namespace std;
 
 class cometData {
