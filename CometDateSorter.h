@@ -45,4 +45,7 @@ vector <numberOfCometsInADay> fNumberOfCometsInADay(string fStreamName, char del
 }
 
 
-
+vector <numberOfCometsInADay> NOCIADSorter(string fStreamName, char delimiter, int expectedColumnsCount, vector <cometData>(*cometDataPickerName)(string, char, int)) {
+	vector <numberOfCometsInADay> NOCIADSortedVec = fNumberOfCometsInADay(fStreamName, delimiter, expectedColumnsCount, cometDataPickerName);
+	return NOCIADSortedVec;
+}
